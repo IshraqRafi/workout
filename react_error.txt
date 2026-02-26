@@ -1,0 +1,3 @@
+﻿src/components/MuscleHeatmap.tsx(3,17): error TS1484: 'IExerciseData' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/MuscleHeatmap.tsx(3,32): error TS1484: 'Muscle' is a type and must be imported using a type-only import when 'verbatimModuleSyntax' is enabled.
+src/components/ProtectedRoute.tsx(4,58): error TS2503: Cannot find namespace 'JSX'.

@@ -1,0 +1,26 @@
+diff --git a/node_modules/react-body-highlighter/dist/react-body-highlighter.cjs.development.js b/node_modules/react-body-highlighter/dist/react-body-highlighter.cjs.development.js
+index 5298f3b..6cbd0b5 100644
+--- a/node_modules/react-body-highlighter/dist/react-body-highlighter.cjs.development.js
++++ b/node_modules/react-body-highlighter/dist/react-body-highlighter.cjs.development.js
+@@ -360,7 +360,7 @@ var Model = /*#__PURE__*/React.memo(function Model(_ref) {
+       return React.createElement("polygon", {
+         key: index,
+         points: points,
+-        onClick: function onClick() {
++        onMouseEnter: function() { if (window.__onMuscleHover) window.__onMuscleHover(exercise); }, onMouseLeave: function() { if (window.__onMuscleLeave) window.__onMuscleLeave(exercise); }, onClick: function onClick() {
+           return handleClick(exercise.muscle, _onClick);
+         },
+         style: {
+diff --git a/node_modules/react-body-highlighter/dist/react-body-highlighter.esm.js b/node_modules/react-body-highlighter/dist/react-body-highlighter.esm.js
+index 4365386..23c7231 100644
+--- a/node_modules/react-body-highlighter/dist/react-body-highlighter.esm.js
++++ b/node_modules/react-body-highlighter/dist/react-body-highlighter.esm.js
+@@ -356,7 +356,7 @@ var Model = /*#__PURE__*/memo(function Model(_ref) {
+       return createElement("polygon", {
+         key: index,
+         points: points,
+-        onClick: function onClick() {
++        onMouseEnter: function() { if (window.__onMuscleHover) window.__onMuscleHover(exercise); }, onMouseLeave: function() { if (window.__onMuscleLeave) window.__onMuscleLeave(exercise); }, onClick: function onClick() {
+           return handleClick(exercise.muscle, _onClick);
+         },
+         style: {
