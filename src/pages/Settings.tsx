@@ -53,7 +53,7 @@ export function Settings() {
                 </div>
             </header>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 2fr) minmax(300px, 1fr)', gap: '2rem' }}>
+            <div className="settings-grid">
 
                 {/* Main Settings Column */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>

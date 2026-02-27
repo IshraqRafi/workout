@@ -171,6 +171,45 @@ export function Login() {
                         )}
                     </button>
                 </form>
+
+                {/* Guest / Portfolio Login Option */}
+                <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
+                    <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+                        <div style={{ position: 'absolute', width: '100%', height: '1px', background: 'linear-gradient(90deg, transparent, var(--border-strong), transparent)' }} />
+                        <span style={{ position: 'relative', background: 'var(--bg-card)', padding: '0 1rem', color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 500 }}>OR</span>
+                    </div>
+
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '1rem', lineHeight: 1.5 }}>
+                        Just browsing? Enter portfolio mode. <br />
+                        <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>(Data is stored locally and will not cross-sync)</span>
+                    </p>
+
+                    <button
+                        onClick={async () => {
+                            setIsLoading(true);
+                            await login('guest');
+                            navigate('/');
+                        }}
+                        disabled={isLoading}
+                        className="glass-pill"
+                        style={{
+                            width: '100%',
+                            padding: '1rem',
+                            background: 'rgba(255,255,255,0.03)',
+                            border: '1px solid var(--border-strong)',
+                            cursor: isLoading ? 'not-allowed' : 'pointer',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            transition: 'all 0.3s ease',
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.08)'}
+                        onMouseLeave={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.03)'}
+                    >
+                        <span style={{ color: 'var(--text-primary)', fontWeight: 600, fontSize: '0.95rem' }}>Enter as Guest Viewer</span>
+                    </button>
+                </div>
+
             </motion.div>
         </div>
     );

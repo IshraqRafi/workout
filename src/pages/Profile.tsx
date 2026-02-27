@@ -118,8 +118,8 @@ export function Profile() {
                 </div>
 
                 <div style={{ flex: 1, position: 'relative', zIndex: 1 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem' }}>
-                        <h1 style={{ fontSize: '3.5rem', fontWeight: 800, margin: 0, letterSpacing: '-0.02em', background: 'linear-gradient(to right, #fff, rgba(255,255,255,0.7))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Ishraq Rafi</h1>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
+                        <h1 className="text-massive" style={{ fontWeight: 800, margin: 0, letterSpacing: '-0.02em', background: 'linear-gradient(to right, #fff, rgba(255,255,255,0.7))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Ishraq Rafi</h1>
                         <span className="glass-pill" style={{ background: 'rgba(139, 92, 246, 0.2)', color: '#C4B5FD', border: '1px solid rgba(139, 92, 246, 0.5)', display: 'flex', alignItems: 'center', gap: '0.4rem', fontWeight: 700 }}>
                             <Star size={16} fill="currentColor" /> Pro Tier
                         </span>
@@ -141,7 +141,7 @@ export function Profile() {
                 </div>
             </motion.div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', gap: '3rem', marginBottom: '3rem' }}>
+            <div className="profile-grid">
 
                 {/* Career Stats Radar */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="glass-panel" style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -231,14 +231,14 @@ export function Profile() {
             </motion.div>
 
             {/* Legacy Settings Block */}
-            <div style={{ display: 'flex', gap: '1rem', paddingTop: '2rem', borderTop: '1px solid var(--border-subtle)' }}>
-                <button className="glass-panel flex-center" style={{ flex: 1, padding: '1rem', gap: '0.5rem', color: 'var(--text-primary)', cursor: 'pointer' }}>
-                    <CreditCard size={18} color="var(--primary)" /> Billing Settings
+            <div style={{ display: 'flex', gap: '1rem', paddingTop: '2rem', borderTop: '1px solid var(--border-subtle)', flexWrap: 'wrap' }}>
+                <button className="glass-panel flex-center" style={{ flex: 1, minWidth: '150px', padding: '1rem', gap: '0.5rem', color: 'var(--text-primary)', cursor: 'pointer' }}>
+                    <CreditCard size={18} color="var(--primary)" /> Billing
                 </button>
-                <button className="glass-panel flex-center" style={{ flex: 1, padding: '1rem', gap: '0.5rem', color: 'var(--text-primary)', cursor: 'pointer' }}>
+                <button className="glass-panel flex-center" style={{ flex: 1, minWidth: '150px', padding: '1rem', gap: '0.5rem', color: 'var(--text-primary)', cursor: 'pointer' }}>
                     <User size={18} color="var(--primary)" /> Edit Profile
                 </button>
-                <button onClick={handleLogout} className="glass-panel flex-center" style={{ flex: 1, padding: '1rem', gap: '0.5rem', color: '#EF4444', background: 'rgba(239, 68, 68, 0.05)', borderColor: 'rgba(239, 68, 68, 0.2)', cursor: 'pointer' }}>
+                <button onClick={handleLogout} className="glass-panel flex-center" style={{ flex: 1, minWidth: '150px', padding: '1rem', gap: '0.5rem', color: '#EF4444', background: 'rgba(239, 68, 68, 0.05)', borderColor: 'rgba(239, 68, 68, 0.2)', cursor: 'pointer' }}>
                     <LogOut size={18} /> Sign Out
                 </button>
             </div>

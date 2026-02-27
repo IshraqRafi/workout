@@ -104,6 +104,10 @@ body {
   background-clip: text;
 }
 
+.text-massive {
+  font-size: 3.5rem;
+}
+
 /* Animations */
 @keyframes fade-in-up {
   from {
@@ -191,11 +195,93 @@ body {
   /* Sidebar width space */
 }
 
+/* Responsive Grid Utilities */
+.dashboard-grid,
+.settings-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.dashboard-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+  align-items: start;
+}
+
+.settings-grid {
+  grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
+}
+
+/* Sidebar & Navigation Logic */
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 900px) {
+
+  .dashboard-grid,
+  .settings-grid,
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
+  .sidebar-desktop {
+    display: none !important;
+  }
+
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    z-index: 50;
+    background: rgba(15, 17, 21, 0.85);
+    /* Slightly darker for contrast */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-strong);
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 0.5rem;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 500;
+    flex: 1;
+    height: 100%;
+    transition: color 0.2s ease;
+  }
+
+  .bottom-nav-item.active {
+    color: var(--primary);
+  }
+
   .main-content {
     margin-left: 0;
     padding: 1rem;
-    padding-bottom: 5rem;
-    /* Mobile nav space */
+    padding-bottom: 90px;
+    /* Bottom nav space */
+  }
+
+  /* Global component mobile squishing prevention */
+  .glass-panel {
+    padding: 1.5rem !important;
+    /* Scale down heavy padding natively */
+  }
+
+  .text-massive {
+    font-size: 2.2rem;
   }
 }
